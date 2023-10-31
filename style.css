@@ -6,8 +6,8 @@
   --color-secondary: white;
   --color-font: lightblue;
   --color-shadow: #f1f1f2;
-/*   --color-shadow: #ff420e; */
-/*   --color-shadow: #31a9b8; */
+  /*   --color-shadow: #ff420e; */
+  /*   --color-shadow: #31a9b8; */
 }
 
 * {
@@ -75,7 +75,7 @@ section {
 .painel p.active {
   opacity: 1;
   color: var(--color-shadow);
-  text-decoration: underline;
+  /* text-decoration: underline; */
   font-weight: bold;
 }
 
@@ -132,6 +132,8 @@ section {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  margin: 1em;
+  display: inline-block;
 }
 
 .controls #reset {

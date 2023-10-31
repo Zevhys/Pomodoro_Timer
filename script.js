@@ -5,8 +5,8 @@ var r = document.querySelector(":root");
 let workTittle = document.getElementById("work");
 let breakTittle = document.getElementById("break");
 
-let workTime = 25;
-let breakTime = 5;
+let workTime = 1;
+let breakTime = 1;
 
 let seconds = "00";
 
@@ -14,6 +14,8 @@ var minutes_ = 0;
 var seconds_ = 0;
 
 var current_timer;
+
+var audio = new Audio("Sound_Alarm.mp3");
 
 // display
 window.onload = () => {
@@ -23,11 +25,13 @@ window.onload = () => {
   workTittle.classList.add("active");
 };
 
+var progressCircle;
+
 // start timer
 function start() {
   // change button
   document.getElementById("start").style.display = "none";
-  document.getElementById("reset").style.display = "block";
+  document.getElementById("reset").style.display = "inline-block";
 
   // change the time
   seconds = 59;
@@ -62,6 +66,7 @@ function start() {
           // change the painel
           workTittle.classList.remove("active");
           breakTittle.classList.add("active");
+          audio.play();
         } else {
           // continue work
           workMinutes = workTime;
@@ -70,6 +75,7 @@ function start() {
           // change the painel
           breakTittle.classList.remove("active");
           workTittle.classList.add("active");
+          audio.play();
         }
       }
       seconds = 59;
